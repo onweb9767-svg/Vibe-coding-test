@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +8,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
     }
 
     img {
@@ -19,10 +19,10 @@
     }
   </style>
 </head>
+
 <body>
 
-  <h2>Upload Image (Vibe Test)</h2>
-
+  <h2>Upload Image</h2>
   <input type="file" id="fileInput" accept="image/*">
 
   <img id="preview">
@@ -31,13 +31,13 @@
     const input = document.getElementById("fileInput");
     const preview = document.getElementById("preview");
 
-    input.addEventListener("change", function () {
+    input.onchange = function () {
       const file = this.files[0];
       if (!file) return;
 
       preview.src = URL.createObjectURL(file);
       preview.style.display = "block";
-    });
+    };
   </script>
 
 </body>
